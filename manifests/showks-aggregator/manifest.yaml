@@ -31,6 +31,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: showks-aggregator
+  namespace: showks
   labels:
     app: showks-aggregator
 spec:
@@ -63,7 +64,7 @@ spec:
     spec:
       containers:
         - name: showks-aggregator
-          image: containerdaysjp/showks-aggregator:prod-3ea447349dcb8d3cc441b2dccd84c577ab9ddc04
+          image: containerdaysjp/showks-aggregator:prod-16c4dce672c5302949dce64f4b76717d3292b2f3
           ports:
             - name: app-port
               containerPort: 8080
