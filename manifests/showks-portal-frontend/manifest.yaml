@@ -38,7 +38,7 @@ spec:
     spec:
       containers:
         - name: showks-portal-frontend
-          image: containerdaysjp/showks-portal-frontend:prod-b994fa62d34506dca6ac75d9ea352c9b48e60cdf
+          image: containerdaysjp/showks-portal-frontend:prod-ba29ad1d696ac64f823f0c27adc6501ddb3c6caf
           ports:
             - name: app-port
               containerPort: 3000
