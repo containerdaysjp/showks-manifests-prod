@@ -7,8 +7,8 @@ metadata:
   name: showks-aggregator-access
   namespace: showks
 rules:
-- apiGroups: ["","apps"]
-  resources: ["services","deployments"]
+- apiGroups: ["","apps","extensions"]
+  resources: ["services","deployments","ingresses"]
   verbs: ["get", "watch", "list"]
 
 ---
@@ -65,7 +65,7 @@ spec:
     spec:
       containers:
         - name: showks-aggregator
-          image: containerdaysjp/showks-aggregator:prod-93cfbb057a6f0c890cddd52275622eb351f86263
+          image: containerdaysjp/showks-aggregator:prod-591e615e92c8f0c879019f61c7fcc731ff806a17
           ports:
             - name: app-port
               containerPort: 8081
