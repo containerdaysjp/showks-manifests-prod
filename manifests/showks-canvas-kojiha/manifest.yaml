@@ -41,7 +41,7 @@ spec:
     spec:
       containers:
         - name: showks-canvas-kojiha
-          image: containerdaysjp/showks-canvas-kojiha:prod-81e0135107135c0b365b7ea2b0e13d7c919b6404
+          image: gcr.io/ipc-containerdays/showks-canvas-kojiha:prod-41c1967f847eaa715da0c46ee9a1e92d1db35488
           ports:
             - name: app-port
               containerPort: 8080
@@ -60,13 +60,6 @@ metadata:
     kubernetes.io/ingress.class: "nginx"
 spec:
   rules:
-  - host: showks-canvas-kojiha.stg.showks.containerdays.jp
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: showks-canvas-kojiha
-          servicePort: 8080
   - host: showks-canvas-kojiha.prod.showks.containerdays.jp
     http:
       paths:
