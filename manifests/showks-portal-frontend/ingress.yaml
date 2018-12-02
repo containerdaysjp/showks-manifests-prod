@@ -10,11 +10,11 @@ metadata:
     nginx.org/ssl-services: "showks-portal-frontend-temp"
     ingress.kubernetes.io/ssl-redirect: "true"
 spec:
+  tls:
+    - hosts:
+      - portal.prod.showks.containerdays.jp
+      secretName: tls-certificate
   rules:
-    tls:
-      - hosts:
-        - portal.prod.showks.containerdays.jp
-        secretName: tls-certificate
   - host: portal.prod.showks.containerdays.jp
     http:
       paths:
@@ -34,11 +34,11 @@ metadata:
     nginx.org/ssl-services: "showks-portal-frontend"
     ingress.kubernetes.io/ssl-redirect: "true"
 spec:
+  tls:
+    - hosts:
+      - portal.prod.showks.containerdays.jp
+      secretName: tls-certificate
   rules:
-    tls:
-      - hosts:
-        - portal.prod.showks.containerdays.jp
-        secretName: tls-certificate
   - host: portal.prod.showks.containerdays.jp
     http:
       paths:
