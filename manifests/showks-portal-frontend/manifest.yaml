@@ -38,7 +38,7 @@ spec:
     spec:
       containers:
         - name: showks-portal-frontend
-          image: gcr.io/ipc-containerdays/showks-portal-frontend:prod-88aae10fe1ab30c7276e5c6f028024ed31c6e0c0
+          image: gcr.io/ipc-containerdays/showks-portal-frontend:prod-e96c5d13d239394e1caa30f92d824785f4ddb77d
           env:
             - name: DOMAIN
               valueFrom:
@@ -46,7 +46,7 @@ spec:
                   name: showks-config
                   key: domain
             - name: AGGREGATOR_URL
-              value: http://aggregator$(DOMAIN)
+              value: https://aggregator$(DOMAIN)
           ports:
             - name: app-port
               containerPort: 3000
