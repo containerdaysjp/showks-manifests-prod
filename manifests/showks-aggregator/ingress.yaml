@@ -7,7 +7,13 @@ metadata:
     kubernetes.io/ingress.class: "nginx"
     nginx.ingress.kubernetes.io/canary: "true"
     nginx.ingress.kubernetes.io/canary-weight: "20"
+    nginx.org/ssl-services: "showks-aggregator-temp"
+    ingress.kubernetes.io/ssl-redirect: "true"
 spec:
+  tls:
+    - hosts:
+      - aggregator.prod.showks.containerdays.jp
+      secretName: tls-certificate
   rules:
   - host: aggregator.prod.showks.containerdays.jp
     http:
@@ -25,7 +31,13 @@ metadata:
   namespace: showks
   annotations:
     kubernetes.io/ingress.class: "nginx"
+    nginx.org/ssl-services: "showks-aggregator"
+    ingress.kubernetes.io/ssl-redirect: "true"
 spec:
+  tls:
+    - hosts:
+      - aggregator.prod.showks.containerdays.jp
+      secretName: tls-certificate
   rules:
   - host: aggregator.prod.showks.containerdays.jp
     http:
