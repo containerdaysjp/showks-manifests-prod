@@ -12,10 +12,10 @@ metadata:
 spec:
   tls:
     - hosts:
-      - portal.prod.showks.containerdays.jp
-      secretName: tls-certificate
+      - portal.showks.containerdays.jp
+      secretName: tls-certificate-public
   rules:
-  - host: portal.prod.showks.containerdays.jp
+  - host: portal.showks.containerdays.jp
     http:
       paths:
       - path: /
@@ -36,10 +36,10 @@ metadata:
 spec:
   tls:
     - hosts:
-      - portal.prod.showks.containerdays.jp
-      secretName: tls-certificate
+      - portal.showks.containerdays.jp
+      secretName: tls-certificate-public
   rules:
-  - host: portal.prod.showks.containerdays.jp
+  - host: portal.showks.containerdays.jp
     http:
       paths:
       - path: /
