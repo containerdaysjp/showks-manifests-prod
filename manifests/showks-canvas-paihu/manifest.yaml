@@ -1,0 +1,76 @@
+---
+# Source: showks-canvas/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: showks-canvas-paihu
+  namespace: showks
+  labels:
+    app: showks-canvas-paihu
+    class: showks-canvas
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8080
+      targetPort: 8080
+      protocol: TCP
+      name: app-port
+  selector:
+    app: showks-canvas-paihu
+
+---
+# Source: showks-canvas/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: showks-canvas-paihu
+  namespace: showks
+  labels:
+    app: showks-canvas-paihu
+    class: showks-canvas
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: showks-canvas-paihu
+  template:
+    metadata:
+      labels:
+        app: showks-canvas-paihu
+        class: showks-canvas
+    spec:
+      containers:
+        - name: showks-canvas-paihu
+          image: gcr.io/ipc-containerdays/showks-canvas-paihu:prod-08e2a944ef7d5350098b00f2b333f270011806f5
+          ports:
+            - name: app-port
+              containerPort: 8080
+              protocol: TCP
+
+---
+# Source: showks-canvas/templates/ingress.yaml
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: showks-canvas-paihu
+  namespace: showks
+  labels:
+    class: showks-canvas
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.org/ssl-services: "showks-canvas-paihu"
+    ingress.kubernetes.io/ssl-redirect: "true"
+spec:
+  tls:
+    - hosts:
+      - showks-canvas-paihu.prod.showks.containerdays.jp
+      secretName: tls-certificate
+  rules:
+  - host: showks-canvas-paihu.prod.showks.containerdays.jp
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: showks-canvas-paihu
+          servicePort: 8080
+
