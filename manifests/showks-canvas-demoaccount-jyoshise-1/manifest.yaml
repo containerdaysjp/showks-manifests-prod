@@ -41,7 +41,7 @@ spec:
     spec:
       containers:
         - name: showks-canvas-demoaccount-jyoshise-1
-          image: gcr.io/ipc-containerdays/showks-canvas-demoaccount-jyoshise-1:prod-4def953d6c4b4a34da2e2dc1d9cc19da83076692
+          image: gcr.io/ipc-containerdays/showks-canvas-demoaccount-jyoshise-1:prod-696865861a36e9b873958fde05147df372702269
           ports:
             - name: app-port
               containerPort: 8080
