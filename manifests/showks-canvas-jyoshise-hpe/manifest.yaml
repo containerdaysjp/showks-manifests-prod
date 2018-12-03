@@ -1,0 +1,76 @@
+---
+# Source: showks-canvas/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: showks-canvas-jyoshise-hpe
+  namespace: showks
+  labels:
+    app: showks-canvas-jyoshise-hpe
+    class: showks-canvas
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8080
+      targetPort: 8080
+      protocol: TCP
+      name: app-port
+  selector:
+    app: showks-canvas-jyoshise-hpe
+
+---
+# Source: showks-canvas/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: showks-canvas-jyoshise-hpe
+  namespace: showks
+  labels:
+    app: showks-canvas-jyoshise-hpe
+    class: showks-canvas
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: showks-canvas-jyoshise-hpe
+  template:
+    metadata:
+      labels:
+        app: showks-canvas-jyoshise-hpe
+        class: showks-canvas
+    spec:
+      containers:
+        - name: showks-canvas-jyoshise-hpe
+          image: gcr.io/ipc-containerdays/showks-canvas-jyoshise-hpe:prod-5d6b82b5ad7d3d796f3c5e5d71210f6d1076bebf
+          ports:
+            - name: app-port
+              containerPort: 8080
+              protocol: TCP
+
+---
+# Source: showks-canvas/templates/ingress.yaml
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: showks-canvas-jyoshise-hpe
+  namespace: showks
+  labels:
+    class: showks-canvas
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.org/ssl-services: "showks-canvas-jyoshise-hpe"
+    ingress.kubernetes.io/ssl-redirect: "true"
+spec:
+  tls:
+    - hosts:
+      - showks-canvas-jyoshise-hpe.prod.showks.containerdays.jp
+      secretName: tls-certificate
+  rules:
+  - host: showks-canvas-jyoshise-hpe.prod.showks.containerdays.jp
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: showks-canvas-jyoshise-hpe
+          servicePort: 8080
+
