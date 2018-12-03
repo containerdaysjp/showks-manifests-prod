@@ -41,7 +41,7 @@ spec:
     spec:
       containers:
         - name: showks-canvas-amsy810
-          image: gcr.io/ipc-containerdays/showks-canvas-amsy810:prod-fa46b55d3ab37090a73b8e8ecad2579a83bf2a19
+          image: gcr.io/ipc-containerdays/showks-canvas-amsy810:prod-cd573dc2048369807d834d1858bc5e6b741852af
           ports:
             - name: app-port
               containerPort: 8080
