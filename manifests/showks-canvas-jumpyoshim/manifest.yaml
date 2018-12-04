@@ -41,7 +41,7 @@ spec:
     spec:
       containers:
         - name: showks-canvas-jumpyoshim
-          image: gcr.io/ipc-containerdays/showks-canvas-jumpyoshim:prod-93b180294cf64850fcbe73636a935bb17ed97d89
+          image: gcr.io/ipc-containerdays/showks-canvas-jumpyoshim:prod-1be1155a0fc833ca4b8e54ca72d2e3c4ce571c5f
           ports:
             - name: app-port
               containerPort: 8080
