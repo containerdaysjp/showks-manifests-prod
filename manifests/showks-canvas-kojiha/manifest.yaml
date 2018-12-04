@@ -41,7 +41,7 @@ spec:
     spec:
       containers:
         - name: showks-canvas-kojiha
-          image: gcr.io/ipc-containerdays/showks-canvas-kojiha:prod-41c1967f847eaa715da0c46ee9a1e92d1db35488
+          image: gcr.io/ipc-containerdays/showks-canvas-kojiha:prod-0cf3ee9ced7be9c7e5fa6899255b593bfb4e1b49
           ports:
             - name: app-port
               containerPort: 8080
@@ -58,7 +58,13 @@ metadata:
     class: showks-canvas
   annotations:
     kubernetes.io/ingress.class: "nginx"
+    nginx.org/ssl-services: "showks-canvas-kojiha"
+    ingress.kubernetes.io/ssl-redirect: "true"
 spec:
+  tls:
+    - hosts:
+      - showks-canvas-kojiha.prod.showks.containerdays.jp
+      secretName: tls-certificate
   rules:
   - host: showks-canvas-kojiha.prod.showks.containerdays.jp
     http:
