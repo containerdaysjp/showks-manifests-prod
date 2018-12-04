@@ -41,7 +41,7 @@ spec:
     spec:
       containers:
         - name: showks-canvas-m-nakayama
-          image: gcr.io/ipc-containerdays/showks-canvas-m-nakayama:prod-9c38b374a2594fe200a4086f928b8c11cac16cc3
+          image: gcr.io/ipc-containerdays/showks-canvas-m-nakayama:prod-25326ccf808cafc23a886088df936e41cf1e77af
           ports:
             - name: app-port
               containerPort: 8080
