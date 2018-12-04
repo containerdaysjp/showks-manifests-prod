@@ -41,7 +41,7 @@ spec:
     spec:
       containers:
         - name: showks-canvas-h-null
-          image: gcr.io/ipc-containerdays/showks-canvas-h-null:prod-c88901ec2cf9cf5fb7f85810374c8527028b0415
+          image: gcr.io/ipc-containerdays/showks-canvas-h-null:prod-3ffa4638eb3465131c1090198da4cbf3367d0d1a
           ports:
             - name: app-port
               containerPort: 8080
