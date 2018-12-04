@@ -1,0 +1,76 @@
+---
+# Source: showks-canvas/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: showks-canvas-track3jyo-hama
+  namespace: showks
+  labels:
+    app: showks-canvas-track3jyo-hama
+    class: showks-canvas
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8080
+      targetPort: 8080
+      protocol: TCP
+      name: app-port
+  selector:
+    app: showks-canvas-track3jyo-hama
+
+---
+# Source: showks-canvas/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: showks-canvas-track3jyo-hama
+  namespace: showks
+  labels:
+    app: showks-canvas-track3jyo-hama
+    class: showks-canvas
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: showks-canvas-track3jyo-hama
+  template:
+    metadata:
+      labels:
+        app: showks-canvas-track3jyo-hama
+        class: showks-canvas
+    spec:
+      containers:
+        - name: showks-canvas-track3jyo-hama
+          image: gcr.io/ipc-containerdays/showks-canvas-track3jyo-hama:prod-00b211b8189854c9642ccd5444a4c117f737754e
+          ports:
+            - name: app-port
+              containerPort: 8080
+              protocol: TCP
+
+---
+# Source: showks-canvas/templates/ingress.yaml
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: showks-canvas-track3jyo-hama
+  namespace: showks
+  labels:
+    class: showks-canvas
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.org/ssl-services: "showks-canvas-track3jyo-hama"
+    ingress.kubernetes.io/ssl-redirect: "true"
+spec:
+  tls:
+    - hosts:
+      - showks-canvas-track3jyo-hama.prod.showks.containerdays.jp
+      secretName: tls-certificate
+  rules:
+  - host: showks-canvas-track3jyo-hama.prod.showks.containerdays.jp
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: showks-canvas-track3jyo-hama
+          servicePort: 8080
+
