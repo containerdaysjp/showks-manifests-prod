@@ -41,7 +41,7 @@ spec:
     spec:
       containers:
         - name: showks-canvas-kojiha
-          image: gcr.io/ipc-containerdays/showks-canvas-kojiha:prod-1f8ebdd8eccb28d302e58193dd138bb85ebd7141
+          image: gcr.io/ipc-containerdays/showks-canvas-kojiha:prod-c8e0a8129bd1b5f5661bb95c1802afa307ab5d87
           ports:
             - name: app-port
               containerPort: 8080
