@@ -41,7 +41,7 @@ spec:
     spec:
       containers:
         - name: showks-canvas-ys-betis
-          image: gcr.io/ipc-containerdays/showks-canvas-ys-betis:prod-d78d6833a03558fffb3302452de363c2c6808321
+          image: gcr.io/ipc-containerdays/showks-canvas-ys-betis:prod-84574a507c276348949c248ff932026292e670a2
           ports:
             - name: app-port
               containerPort: 8080
