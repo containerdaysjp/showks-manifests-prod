@@ -41,7 +41,7 @@ spec:
     spec:
       containers:
         - name: showks-canvas-hideo
-          image: gcr.io/ipc-containerdays/showks-canvas-hideo:prod-ceebc04c5e8d0971b93db2be365af62d206f6dd7
+          image: gcr.io/ipc-containerdays/showks-canvas-hideo:prod-761246ad7481e0d2f5203e2eb612a4fdc890b914
           ports:
             - name: app-port
               containerPort: 8080
