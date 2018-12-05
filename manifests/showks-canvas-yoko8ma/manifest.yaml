@@ -41,7 +41,7 @@ spec:
     spec:
       containers:
         - name: showks-canvas-yoko8ma
-          image: gcr.io/ipc-containerdays/showks-canvas-yoko8ma:prod-5cb81b3109407dd64e0c5f7453c3bb8fff3e1c4d
+          image: gcr.io/ipc-containerdays/showks-canvas-yoko8ma:prod-7d9bcd05dacd9ccc91b1c6596da1d1c2a430c1f0
           ports:
             - name: app-port
               containerPort: 8080
