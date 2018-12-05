@@ -41,7 +41,7 @@ spec:
     spec:
       containers:
         - name: showks-canvas-konoyono
-          image: gcr.io/ipc-containerdays/showks-canvas-konoyono:prod-0f876ef0e7aeb4a2fff7df00cc3d640a3d7bd6c0
+          image: gcr.io/ipc-containerdays/showks-canvas-konoyono:prod-eab65a26a5b5fb026e287107d54ba3ecc9afbfd1
           ports:
             - name: app-port
               containerPort: 8080
