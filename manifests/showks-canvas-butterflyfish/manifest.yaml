@@ -41,7 +41,7 @@ spec:
     spec:
       containers:
         - name: showks-canvas-butterflyfish
-          image: gcr.io/ipc-containerdays/showks-canvas-butterflyfish:prod-77efff2f4b2f56a9603c316ce62846211210fa92
+          image: gcr.io/ipc-containerdays/showks-canvas-butterflyfish:prod-a9e646dbd58577b7932b062a5103ba9ba1d8520f
           ports:
             - name: app-port
               containerPort: 8080
