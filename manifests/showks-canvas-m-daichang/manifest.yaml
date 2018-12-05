@@ -41,7 +41,7 @@ spec:
     spec:
       containers:
         - name: showks-canvas-m-daichang
-          image: gcr.io/ipc-containerdays/showks-canvas-m-daichang:prod-3e55467f59f92eef3b78948a13ea2ec5b4c0b5b2
+          image: gcr.io/ipc-containerdays/showks-canvas-m-daichang:prod-d382dea1da8a56f97c69b7662b96c73a2273b826
           ports:
             - name: app-port
               containerPort: 8080
