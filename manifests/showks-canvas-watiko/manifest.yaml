@@ -41,7 +41,7 @@ spec:
     spec:
       containers:
         - name: showks-canvas-watiko
-          image: gcr.io/ipc-containerdays/showks-canvas-watiko:prod-987086bc5583d9ebf23215c3c14a8b80fa4bc355
+          image: gcr.io/ipc-containerdays/showks-canvas-watiko:prod-a6cfbd0a0c19aa22ad93e78d1654d7cd3474d841
           ports:
             - name: app-port
               containerPort: 8080
