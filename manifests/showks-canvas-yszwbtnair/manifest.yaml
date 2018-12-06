@@ -41,7 +41,7 @@ spec:
     spec:
       containers:
         - name: showks-canvas-yszwbtnair
-          image: gcr.io/ipc-containerdays/showks-canvas-yszwbtnair:prod-13f9b738602c226e90189eb63ae40824cee93b72
+          image: gcr.io/ipc-containerdays/showks-canvas-yszwbtnair:prod-fb2faf1486038d62988b389bafdf71b3f98e5814
           ports:
             - name: app-port
               containerPort: 8080
