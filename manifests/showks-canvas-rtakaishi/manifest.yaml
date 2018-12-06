@@ -41,7 +41,7 @@ spec:
     spec:
       containers:
         - name: showks-canvas-rtakaishi
-          image: gcr.io/ipc-containerdays/showks-canvas-rtakaishi:prod-ecae6f124e1b97b7a9e10b5445993f205fae7bf8
+          image: gcr.io/ipc-containerdays/showks-canvas-rtakaishi:prod-7e623cb8407058e625a05a1def354b1a50aab328
           ports:
             - name: app-port
               containerPort: 8080
