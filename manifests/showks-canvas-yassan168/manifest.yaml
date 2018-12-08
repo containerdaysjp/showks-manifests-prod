@@ -41,7 +41,7 @@ spec:
     spec:
       containers:
         - name: showks-canvas-yassan168
-          image: gcr.io/ipc-containerdays/showks-canvas-yassan168:prod-143a454a6ed6399121875dd1d1daf53c2f9be5f3
+          image: gcr.io/ipc-containerdays/showks-canvas-yassan168:prod-581d17c2159fbdd37f3faa4157ee1d823322d80a
           ports:
             - name: app-port
               containerPort: 8080
