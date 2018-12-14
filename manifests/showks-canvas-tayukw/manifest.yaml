@@ -41,7 +41,7 @@ spec:
     spec:
       containers:
         - name: showks-canvas-tayukw
-          image: gcr.io/ipc-containerdays/showks-canvas-tayukw:prod-62ded662ef44ef2b43199fca2f3fb7f01ccbe01c
+          image: gcr.io/ipc-containerdays/showks-canvas-tayukw:prod-9097e49b28dafdc7fd95094b87e4f421e7b66ac0
           ports:
             - name: app-port
               containerPort: 8080
